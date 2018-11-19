@@ -1,3 +1,4 @@
+import sys
 class Solution:
     def findSubstring(self, s, words):
         """
@@ -5,6 +6,8 @@ class Solution:
         :type words: List[str]
         :rtype: List[int]
         """
+        if len(words) == 0:
+            return []
         L = len(words)
         l = len(words[0])
         ans = []
@@ -16,12 +19,17 @@ class Solution:
 def valid(window,words):
     L = len(words)
     l = len(words[0])
+    tmp = words.copy()
     if len(window) != l*L:
         return False
     for i in range(0,L*l,l):
         cur = window[i:i+l]
-        if cur in words:
-            words.remove(cur)
-        else:
+        if cur not in tmp:
             return False
-    return len(words) == 0
+        else:
+            tmp.remove(cur)
+    sys.stderr.write(str(tmp))
+    # print(tmp)
+    # print(words)
+    sys.stderr.write(str(words))
+    return len(tmp) == 0
