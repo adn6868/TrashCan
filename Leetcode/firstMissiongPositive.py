@@ -4,7 +4,7 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
-        dict ={ 0:True }
+        dict ={ }
         for n in nums:
             if n >=0:
                 dict[n] = True
