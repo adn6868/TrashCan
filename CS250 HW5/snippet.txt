@@ -1,4 +1,0 @@
-3
-Suzie:address1:Kirksville:MO:63501
-Smith:address2:Kirksville:MO:63501
-Annie:address3:Vegas:MO:63501
