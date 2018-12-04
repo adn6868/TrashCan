@@ -19,7 +19,10 @@ class Client:
 
 
 def main():
-	Client = Client()
+	c = Client()
+	des = "" #i'm will keep this part private as github is full of crazy people sometime
+	c.addMessage("Yo, wat up")
+	c.sendMessage(des,PORT)
 
 if __name__ == '__main__':
 	main()
