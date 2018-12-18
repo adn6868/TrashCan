@@ -7,13 +7,45 @@ class Solution:
         :type K: int
         :rtype: int
         """
-        dist = [sys.maxsize]*len(times)
-        prev = [None]*len(times)
-        Q =[]
-        for vertex in times:
-            Q.append(vertex[0])
-        dist[N-1] = 0
+        dist = [sys.maxsize]*N
+        dist[K-1] = 0
+        visited = [False]*N
+        Q =[K]
+        # visited[K-1] = True
+        # graph ={}
+        # for vertex in times:
+        #     if vertex[0] == K:
+        #         Q.append(vertex[1])
+        
         while len(Q) != 0:
+            # sys.stdout.write(str(Q))
+            cur = Q.pop(0)
+            # if visited[cur]:
+            #     sys.stdout.write("break for"+str(cur))
+            #     break
+            # else:
+            #     visited[cur] = True
+            if not visited[cur-1]:
+                visited[cur-1] = True
+                # sys.stdout.write(str(Q))
+                for vertex in times:
+                    u = vertex[0]
+                    v = vertex[1]
+                    w = vertex[2]
+                    # sys.stdout.write("U = "+str(u))
+                    # sys.stdout.write("cur = "+str(cur))
+                    if u == cur:
+                        # sys.stdout.write("equal, add "+str(v))
+                        dist[v-1] = min(dist[v-1],dist[u-1]+w)
+                        # sys.stdout.write(str(dist)+'\n')
+                        Q.append(v)
+        # sys.stdout.write(str(dist))
+        if sys.maxsize in dist:
+            return -1
+        else: return max(dist)
+            
+            
+            
             
         # matrix = [sys.maxsize]*N
         # matrix[K-1] = 0
