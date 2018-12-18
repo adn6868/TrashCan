@@ -15,7 +15,7 @@ class Server:
 		self.s.sendto(self.m,(destination,port))
 	def listen(self):
 		self.s.bind(("",self.port))
-		self.s.listen(5)
+		self.s.listen()
 		while True:
 			c, addr = self.s.accept()
 			print('got connection from', addr)

@@ -20,9 +20,11 @@ class Client:
 
 def main():
 	c = Client()
-	des = "" #i'm will keep this part private as github is full of crazy people sometime
+	des = "10.1.11.87" #i'm will keep this part private as github is full of crazy people sometime
+	
 	c.addMessage("Yo, wat up")
-	c.sendMessage(des,PORT)
+	while (True):
+		c.sendMessage(des,PORT)
 
 if __name__ == '__main__':
 	main()
