@@ -6,7 +6,7 @@ for line in f1:
 	if top not in joblevel:
 		joblevel[top] = True
 f1.close()
-f2 = open("AllProject,txt",'r')
+f2 = open("AllProject.txt",'r')
 for line in f2:
 	line = line.strip("\n")
 	if line not in joblevel:
