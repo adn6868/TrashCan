@@ -24,5 +24,3 @@ class Solution:
             STACK.append(self.right)
             
         return ans
-            
-        
