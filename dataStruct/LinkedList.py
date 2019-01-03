@@ -32,18 +32,23 @@ def main():
 	a.add(1)
 	print(a.toString())
 	print (isPalidrome(a))
+	b = LinkedList(2)
+	b.add(1)
+	b.add(2)
+	print (isPalidrome(b))
+	
 
 def reverse_in_place(a): #O(n)
 	cur = a
 	head = a
-	nex = None
-	prev = None
+	left = None
+	right = None
 	while cur: 
-		nex = cur.next
-		cur.next = prev
-		prev = cur
-		cur = nex
-	a = prev
+		left = cur.next
+		cur.next = right
+		right = cur
+		cur = left
+	a = right
 	return a
 
 def isPalidrome(a): #O(n)
