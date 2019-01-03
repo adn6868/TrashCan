@@ -17,21 +17,30 @@ class LinkedList:
 	def toString(self):
 		ans = ''
 		cur = self
-		while cur.next:
+		while cur:
 			ans += str(cur.val) +'->'
 			cur = cur.next
 		return ans
 
 def main():
-	a = LinkedList(2)
-	b = LinkedList(3)
-	c = LinkedList(4)
-	a.addLast(b)
-	a.addLast(c)
-	a.add(11)
-	a.add(12)
-	a.add(9)
+	a = LinkedList(1)
+	a.add(2)
+	a.add(3)
+	a.add(4)
+	a.add(5)
 	print(a.toString())
-
+	reverse_in_place(a)
+def reverse_in_place(a):
+	cur = a
+	head = a
+	nex = None
+	prev = None
+	while cur:
+		nex = cur.next
+		cur.next = prev
+		prev = cur
+		cur = nex
+	a = prev
+	print(a.toString())
 if __name__ == '__main__':
 	main()
