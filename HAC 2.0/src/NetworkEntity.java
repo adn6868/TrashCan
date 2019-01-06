@@ -9,18 +9,18 @@ public class NetworkEntity {
 	
 	static int staticId;
 	
-	private InetAddress ip;
-	private DatagramPacket packet;
-	private int id;
 	private byte[] buf;
+	private DatagramPacket packet;
+	private InetAddress ip;
+	private int id;
 	
 	public NetworkEntity() 
 	{
-		name = String.format("Network Entity %d", staticId);
 		buf = new byte[1024];
 		id = staticId;
-		staticId ++;
+		name = String.format("Network Entity %d", staticId);
 		packet = new DatagramPacket(buf, buf.length);
+		staticId ++;
 		try 
 		{
 			socket = new DatagramSocket(1412);

@@ -103,9 +103,9 @@ def solve(n):
 
 
 if __name__ == '__main__':
-	O = Output()
 	E = Error()
 	I = Input()
+	O = Output()
 
 	query = I.readInt()
 	for i in range(query):
