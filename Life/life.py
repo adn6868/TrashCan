@@ -4,10 +4,10 @@ Remake Conway's Game of Life
 # import numpy as np
 class Gaia:
     def __init__(self,H,W):
+        self.clearNext()
+        self.curr =[]
         self.H = H
         self.W = W
-        self.curr =[]
-        self.clearNext()
         for i in range(self.H):
             line = []
             for j in range(self.W):
