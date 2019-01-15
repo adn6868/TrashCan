@@ -5,6 +5,7 @@ import time
 def get(url, session):
 	with session.get(url) as response:
 		print("get %d from %s" % (len(response.content), url))
+		# pass
 
 def getList(sites):
 	with requests.Session() as session:
