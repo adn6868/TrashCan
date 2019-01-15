@@ -4,7 +4,7 @@ import time
 
 def get(url, session):
 	with session.get(url) as response:
-		print("get %d from %s" % (len(response.content), url))
+		print("get %s from %s" % (str(response.content), url))
 		# pass
 
 def getList(sites):

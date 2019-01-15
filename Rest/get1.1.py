@@ -22,7 +22,7 @@ def get(url):
 # 			get(url,session)
 
 def getList(sites):
-	with LOCAL_THREAD as executor:
+	with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
 		executor.map(get, sites)
 
 
