@@ -1,7 +1,7 @@
+from sys import stdout as O
 import concurrent.futures
 import json
 import requests
-from sys import stdout as O
 import threading
 import time
 
@@ -14,11 +14,11 @@ class UrlBuilder:
 	Update this to match API
 	'''
 	def __init__(self, key = KEY):
-		self.key = key
-		self.symbol = ''
 		self.function = ''
 		self.interval = ''
+		self.key = key
 		self.outputsize = ''
+		self.symbol = ''
 		self.VALID_FUNCTIONS = ''
 		self.VALID_INTERVALS = ['1min','5min']
 
@@ -64,10 +64,6 @@ def download_list(symbolList):
 		executor.map(download, symbolList)
 
 if __name__ == '__main__':
-	urlBuilder = UrlBuilder()
-	urlBuilder.setInterval()
-	urlBuilder.setOutputSize()
-	symbolList = [ "TLRY" , "AAPL" , "CRON" , "DNR"]
 	with open(INPUT_FILE,'r') as f:
 		symbolList = f.read().split('\n')
 	
